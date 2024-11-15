@@ -1,0 +1,14 @@
+asgiref==3.7.2
+colorama==0.4.6
+distlib==0.3.8
+Django==5.0.3
+filelock==3.13.1
+mpmath==1.3.0
+numpy==1.26.4
+pillow==10.3.0
+platformdirs==3.11.0
+qrcode==8.0
+sqlparse==0.4.4
+sympy==1.12
+tzdata==2024.1
+virtualenv==20.24.5
