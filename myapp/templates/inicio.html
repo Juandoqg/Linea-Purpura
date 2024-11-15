@@ -5,11 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina principal</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Index.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inicio.css' %}" />
 
 </head>
 <body>
-    <h1>hola</h1>
-    
+    <h1>Página de Inicio</h1>
+    <p>Haz clic en los botones:</p>
+
+    <!-- Formulario para manejar clics -->
+    <form method="POST">
+        {% csrf_token %}
+        {% for boton in botones %}
+            {% if boton.nombre == "Linea púrpura" %}
+                <!-- Redirección a WhatsApp -->
+                <button type="button" onclick="window.location.href='https://wa.me/3026032386'">
+                    {{ boton.nombre }}
+                </button>
+            {% elif boton.nombre == "Patrulla púrpura" %}
+                <button type="button" onclick="window.location.href='https://wa.me/3185305870'">
+                {{ boton.nombre }}
+                </button>
+            {% else %}  
+                <button type="button" onclick="window.location.href='https://wa.me/3163346694'">
+                {{ boton.nombre }}
+                </button>
+            {% endif %}
+        {% endfor %}
+    </form>
 </body>
 </html>
