@@ -4,7 +4,8 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
     background-color: #f5f5f5;
-    color: #333;
+    color: #ffffff;
+    background-image: url('../img/fondo.jpg');
 }
 
 a {
@@ -15,7 +16,7 @@ a {
 /* Header */
 .bubble-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #971488;
     padding: 10px 20px;
@@ -52,13 +53,13 @@ a {
 
 .type-three-feature-cards-horizontal .subheading {
     font-size: 16px;
-    color: #555;
+    color: #ffffff;
 }
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /* Reducir el tamaño mínimo de las cards */
+    gap: 15px;  /* Espacio entre las cards */
     padding: 10px;
 }
 
@@ -81,13 +82,14 @@ a {
 }
 
 .subheading2 {
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     font-weight: bold;
 }
 
 .heading2 {
-    font-size: 20px;
+    font-size: 16px;
+    color: #333;
     margin: 10px 0;
 }
 
@@ -97,7 +99,6 @@ a {
 }
 
 /* Estilo para el botón */
-/* Estilo para el botón dentro del form */
 .big-card button {
     background-color: #971488;  /* Fondo morado */
     color: white;  /* Texto en blanco */
@@ -117,8 +118,6 @@ a {
     background-color: #5a2b8d;  /* Fondo morado más oscuro */
     color: white;  /* Mantiene el texto blanco */
 }
-
-/* Si quieres que el botón ocupe solo el tamaño del contenido en lugar de todo el ancho disponible, elimina `width: 100%;` */
 
 /* Footer - Elimina ya que no está en uso en el HTML */
 .type-simple-subscription-footer-with-divider {
@@ -154,16 +153,16 @@ a {
     }
 
     .cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducir aún más el tamaño mínimo en pantallas más pequeñas */
+        gap: 10px; /* Reducir el espacio entre las cards */
     }
 
     .big-card {
-        margin: 10px;
+        margin: 8px;  /* Reducir el margen entre las cards */
     }
 
     .big-card button {
-        padding: 12px 20px;
+        padding: 10px 15px;
         font-size: 14px;
     }
 
@@ -183,17 +182,17 @@ a {
 
     .big-card {
         max-width: 100%;
-        margin: 5px;
+        margin: 5px;  /* Reducir el margen */
     }
 
     .big-card button {
-        padding: 10px 15px;
-        font-size: 14px;
+        padding: 8px 12px; /* Botón aún más pequeño */
+        font-size: 12px;
     }
 
     .cards-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr;  /* En dispositivos muy pequeños, hacer que las cards ocupen toda la fila */
+        gap: 8px; /* Reducir aún más el espacio entre las cards */
     }
 
     .content2 {
