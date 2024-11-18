@@ -34,6 +34,8 @@
                                     <div class="content3">
                                         <div class="heading2">{{ boton.mensaje }}.</div>
                                     </div>
+                                    <img class="image-lummi" src="{% static boton.imgBoton %}" alt="Imagen del producto">
+
                                 </div>
                                         <form method="POST">
                                             {% csrf_token %}
@@ -43,7 +45,6 @@
                                             </button>
                                         </form>
                             </div>
-                            <img class="image-lummi" src="{% static boton.imgBoton %}" alt="Imagen del producto">
                         </div>
                     {% endfor %}
                 </div>
