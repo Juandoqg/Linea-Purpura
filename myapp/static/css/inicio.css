@@ -17,7 +17,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #5b2c6f;
+    background-color: #971488;
     padding: 10px 20px;
     color: white;
     flex-wrap: wrap;
@@ -99,7 +99,7 @@ a {
 /* Estilo para el botón */
 /* Estilo para el botón dentro del form */
 .big-card button {
-    background-color: #7e57c2;  /* Fondo morado */
+    background-color: #971488;  /* Fondo morado */
     color: white;  /* Texto en blanco */
     padding: 10px 20px;
     border: none;  /* Sin borde extra */
