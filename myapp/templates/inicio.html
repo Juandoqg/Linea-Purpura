@@ -1,36 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina principal</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/inicio.css' %}" />
-
+    <title>Secretaría de la Mujer</title>
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
 </head>
-<body>
-    <h1>Página de Inicio</h1>
-    <p>Haz clic en los botones:</p>
 
-    <!-- Formulario para manejar clics -->
-    <form method="POST">
-        {% csrf_token %}
-        {% for boton in botones %}
-            {% if boton.nombre == "Linea púrpura" %}
-                <!-- Redirección a WhatsApp -->
-                <button type="button" onclick="window.location.href='https://wa.me/3026032386'">
-                    {{ boton.nombre }}
-                </button>
-            {% elif boton.nombre == "Patrulla púrpura" %}
-                <button type="button" onclick="window.location.href='https://wa.me/3026032386'">
-                {{ boton.nombre }}
-                </button>
-            {% else %}  
-                <button type="button" onclick="window.location.href='https://wa.me/3026032386'">
-                {{ boton.nombre }}
-                </button>
-            {% endif %}
-        {% endfor %}
-    </form>
+<body>
+
+    <div class="empowerment-and-support-for-women-home">
+        <div class="type-centered-brand-with-nav-on-left-right-for-portfolio-and-resumes">
+            <div class="bubble-container">
+                <div class="nav-links"></div>
+                <div class="brand">
+                    <div class="brand-name">Secretaría de la Mujer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="type-three-feature-cards-horizontal">
+            <div class="content">
+                <div class="heading-container">
+                    <div class="heading">Conoce Nuestros Programas</div>
+                    <div class="subheading">Iniciativas para el Bienestar Femenino</div>
+                </div>
+                <div class="cards-grid">
+                    {% for boton in botones %}
+                        <div class="big-card">
+                            <div class="content2">
+                                <div class="content-container">
+                                    <div class="subheading2">{{ boton.nombre }}</div>
+                                    <div class="content3">
+                                        <div class="heading2">{{ boton.nombre }}.</div>
+                                        <div class="text">Descubre cómo podemos ayudarte.</div>
+                                    </div>
+                                </div>
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            <button type="button" 
+                                                onclick="window.location.href='https://wa.me/{{ boton.numero }}'">
+                                                {{ boton.nombre }}
+                                            </button>
+                                        </form>
+                            </div>
+                            <img class="image-lummi" src="https://via.placeholder.com/464x364" />
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
+
