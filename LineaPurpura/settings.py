@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-k*-nyo!7-^kr&c*jq%8h(!6zmu34y1yhc!j1am+8!4qavuhi_e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'linea-purpura-production.up.railway.app',  
+    'servicios-purpura-buga.com',
+    'localhost', 
+    '127.0.0.1', 
+]
+
 
 
 # Application definition
@@ -126,4 +132,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     'https://linea-purpura-production.up.railway.app/',
+    'https://servicios-purpura-buga.com',
+
+]
+CORS_ALLOWED_ORIGINS = [
+    'https://linea-purpura-production.up.railway.app',
+    'https://servicios-purpura-buga.com',
 ]
