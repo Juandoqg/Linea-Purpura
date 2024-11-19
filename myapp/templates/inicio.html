@@ -78,7 +78,7 @@
             .then(response => {
                 if (response.ok) {
                     // Después de que el formulario se haya enviado correctamente, redirigir a WhatsApp
-                    window.location.href = `https://wa.me/${numero}`;
+                    window.location.href = `https://wa.me/+57${numero}`;
                 } else {
                     console.error('Error al enviar el formulario');
                 }

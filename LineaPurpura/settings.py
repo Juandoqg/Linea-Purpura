@@ -132,11 +132,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://linea-purpura-production.up.railway.app',  # Sin barra diagonal al final
-    'https://servicios-purpura-buga.com',  # Sin barra diagonal al final
+    'https://linea-purpura-production.up.railway.app',  
+    'https://servicios-purpura-buga.com',  
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://linea-purpura-production.up.railway.app',  # Sin barra diagonal al final
-    'https://servicios-purpura-buga.com',  # Sin barra diagonal al final
+    'https://linea-purpura-production.up.railway.app',  
+    'https://servicios-purpura-buga.com',  
 ]

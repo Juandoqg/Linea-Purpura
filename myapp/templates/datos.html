@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantidad de clics</title>
+    <link rel="stylesheet" href="{% static 'css/datos.css' %}">
+</head>
+<body>
+
+    <h1>Lista de Botones y sus Clics</h1>
+
+    <div class="card-container">
+        {% for dato in datos %}
+        <div class="card">
+            <div class="card-header">
+                <h2>{{ dato.nombre }}</h2>
+            </div>
+            <div class="card-body">
+                <p><strong>Clics:</strong> {{ dato.clicks }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

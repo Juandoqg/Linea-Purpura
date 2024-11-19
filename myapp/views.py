@@ -16,3 +16,11 @@ def inicio(request):
     botones = Boton.objects.all()
     contexto = {boton.nombre: boton.clicks for boton in botones}
     return render(request, 'inicio.html', {"botones": botones})
+
+def obtenerDatos(request):
+    if request.method == "GET":
+        datos = Boton.objects.all()
+
+    return render ( request, "datos.html" , {"datos" : datos})
+
+
