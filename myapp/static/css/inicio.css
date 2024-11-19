@@ -1,205 +1,113 @@
-/* General Styles */
+/* Estilos generales */
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    background-color: #f5f5f5;
-    color: #ffffff;
-    background-image: url('../img/fondo.jpg');
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Header */
-.bubble-container {
+    padding: 0;
+    background-color: #fdfcff;
     display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center;     /* Centra los elementos verticalmente */
-    background-color: #971488;
-    padding: 20px 20px;
-    color: white;
-    flex-wrap: wrap;
-    text-align: center;      /* Centra el texto de los elementos dentro del contenedor */
-}
-
-.brand .brand-name {
-    font-size: 24px;
-    font-weight: bold;
-    flex: 1;
-    text-align: center;  /* Centra el texto dentro del contenedor */
-}
-
-.nav-links {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra los enlaces de navegación */
-    flex: 1;
-    text-align: center; /* Asegura que el texto de los enlaces esté centrado */
-}
-
-/* Feature Section */
-.type-three-feature-cards-horizontal .heading-container {
-    text-align: center;
-    margin: 20px auto;
-    padding: 0 10px;
-}
-
-.type-three-feature-cards-horizontal .heading {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.type-three-feature-cards-horizontal .subheading {
-    font-size: 16px;
-    color: #ffffff;
-}
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /* Reducir el tamaño mínimo de las cards */
-    gap: 15px;  /* Espacio entre las cards */
-    padding: 10px;
-}
-
-.big-card {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
     overflow: hidden;
 }
 
-.big-card img {
-    width: 100%;
-    height: auto;
-}
-
-.content2 {
+/* Contenedor principal */
+.desktop-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
     padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
 }
 
-.subheading2 {
-    font-size: 20px;
-    color: #333;
-    font-weight: bold;
-}
-
-.heading2 {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-}
-
-.text {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Estilo para el botón */
-.big-card button {
-    background-color: #971488;  /* Fondo morado */
-    color: white;  /* Texto en blanco */
-    padding: 10px 20px;
-    border: none;  /* Sin borde extra */
-    font-size: 16px;  /* Tamaño de fuente */
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;  /* Bordes redondeados */
-    width: 100%;  /* Hace que el botón ocupe todo el ancho disponible */
-    margin-top: 10px;  /* Espaciado superior */
-    transition: background-color 0.3s ease;  /* Efecto suave al pasar el mouse */
-}
-
-/* Efecto al pasar el mouse sobre el botón */
-.big-card button:hover {
-    background-color: #5a2b8d;  /* Fondo morado más oscuro */
-    color: white;  /* Mantiene el texto blanco */
-}
-
-/* Footer - Elimina ya que no está en uso en el HTML */
-.type-simple-subscription-footer-with-divider {
-    background-color: #5b2c6f;
-    color: white;
-    padding: 20px 10px;
+/* Grupo de botón e ícono */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive Styles */
+/* Contenedor del ícono */
+.icon-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.icon-container {
+    flex-shrink: 0;
+}
+
+.icon-container img {
+    width: 70px;
+    height: 70px;
+}
+
+/* Botón principal */
+.button {
+    background-color: #7e57c2;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 250px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.button:hover {
+    background-color: #5e3ea0;
+}
+
+/* Texto del botón */
+.button2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Descripción debajo del botón */
+.description {
+    font-size: 0.9rem;
+    color: #444;
+    max-width: 350px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
-    .bubble-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        text-align: center; /* Asegura que todo el texto en el header esté centrado */
+    .icon-container img {
+        width: 60px;
+        height: 60px;
     }
 
-    .brand .brand-name {
-        font-size: 20px;
-        text-align: center;
+    .button {
+        font-size: 0.9rem;
+        height: 60px;
     }
 
-    .nav-links {
-        justify-content: center;
-    }
-
-    .type-three-feature-cards-horizontal .heading {
-        font-size: 24px;
-    }
-
-    .type-three-feature-cards-horizontal .subheading {
-        font-size: 14px;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducir aún más el tamaño mínimo en pantallas más pequeñas */
-        gap: 10px; /* Reducir el espacio entre las cards */
-    }
-
-    .big-card {
-        margin: 8px;  /* Reducir el margen entre las cards */
-    }
-
-    .big-card button {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    .content2 {
-        padding: 10px;
+    .description {
+        font-size: 0.8rem;
     }
 }
-
-@media (max-width: 480px) {
-    .bubble-container {
-        padding: 10px;
-    }
-
-    .brand .brand-name {
-        font-size: 18px;
-    }
-
-    .big-card {
-        max-width: 100%;
-        margin: 5px;  /* Reducir el margen */
-    }
-
-    .big-card button {
-        padding: 8px 12px; /* Botón aún más pequeño */
-        font-size: 12px;
-    }
-
-    .cards-grid {
-        grid-template-columns: 1fr;  /* En dispositivos muy pequeños, hacer que las cards ocupen toda la fila */
-        gap: 8px; /* Reducir aún más el espacio entre las cards */
-    }
-
-    .content2 {
-        padding: 10px;
-    }
-}
-    

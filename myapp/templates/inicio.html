@@ -1,59 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secretaría de la Mujer</title>
+    <title>No Estás Sola</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    <link rel="icon" href="{% static 'img/logoalcaldia.ico' %}" type="image/x-icon">
+    <style>
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{% static 'img/fondo.png' %}");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="empowerment-and-support-for-women-home">
-            <div class="bubble-container">
-                <div class="brand">
-                    <div class="brand-name">Secretaría de la Mujer</div>
+    <div class="desktop-1">
+        {% for boton in botones %}
+        <div class="button-group">
+            <div class="icon-button-container">
+                <div class="icon-container">
+                    <img src="{% static boton.imgBoton %}" alt="{{ boton.nombre }}" class="icon" />
                 </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <button class="button" type="button" onclick="window.location.href='https://wa.me/{{ boton.numero }}'">
+                        <span class="button2">{{ boton.nombre }}</span>
+                    </button>
+                </form>
+            </div>
+            <div class="description">
+                {% if boton.nombre == "Línea púrpura" %}
+                (Línea de acompañamiento psicosocial y jurídico)
+                {% elif boton.nombre == "Patrulla púrpura" %}
+                (Cuadrante de la Policía Nacional especializado en violencia basada en género.)
+                {% elif boton.nombre == "Taxi púrpura" %}
+                (Siéntete segura viajando en nuestros taxis<br>intermunicipales, especializados en transportar mujeres.)
+                {% else %}
+                {{ boton.descripcion }}
+                {% endif %}
             </div>
         </div>
-
-        <div class="type-three-feature-cards-horizontal">
-            <div class="content">
-                <div class="heading-container">
-                    <div class="heading">Conoce nuestros servicios </div>
-                    <div class="subheading">Iniciativas para el Bienestar Femenino</div>
-                </div>
-                <div class="cards-grid">
-                    {% for boton in botones %}
-                        <div class="big-card">
-                            <div class="content2">
-                                <div class="content-container">
-                                    <div class="subheading2">{{ boton.nombre }}</div>
-                                    <div class="content3">
-                                        <div class="heading2">{{ boton.mensaje }}.</div>
-                                    </div>
-                                    <img class="image-lummi" src="{% static boton.imgBoton %}" alt="Imagen del producto">
-
-                                </div>
-                                        <form method="POST">
-                                            {% csrf_token %}
-                                            <button type="button" 
-                                                onclick="window.location.href='https://wa.me/{{ boton.numero }}'">
-                                                {{ boton.nombre }}
-                                            </button>
-                                        </form>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 
 </body>
 
 </html>
-
