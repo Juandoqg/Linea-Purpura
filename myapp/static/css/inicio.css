@@ -192,7 +192,6 @@ body::before {
     background-color: #5e3ea0;
 }
 
-/* Estilo del botón de cerrar */
 .modal-taxi .close-modal {
     background-color: #cf2222;
     color: #ffffff;
