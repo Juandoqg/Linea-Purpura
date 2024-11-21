@@ -11,11 +11,8 @@ def inicio(request):
             boton.save()
         except Boton.DoesNotExist:
             pass  # Si no existe el botón, no hacemos nada
-
-    # Obtener los clics de cada botón
-    botones = Boton.objects.all()
-    contexto = {boton.nombre: boton.clicks for boton in botones}
-    return render(request, 'inicio.html', {"botones": botones})
+    
+    return render(request, 'inicio.html', )
 
 def obtenerDatos(request):
     if request.method == "GET":

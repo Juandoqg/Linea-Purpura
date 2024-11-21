@@ -9,44 +9,93 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
     <link rel="icon" href="{% static 'img/logoalcaldia.ico' %}" type="image/x-icon">
-
 </head>
 
 <body>
-
     <div class="desktop-1">
-        {% for boton in botones %}
         <div class="button-group">
             <div class="icon-button-container">
                 <div class="icon-container">
-                    <img src="{% static boton.imgBoton %}" alt="{{ boton.nombre }}" class="icon" />
+                    <img src="{% static 'img/whatsapp.png' %}" alt="Linea púrpura" class="icon" />
                 </div>
-                <form method="POST" id="form-{{ boton.nombre }}" class="form-boton">
+                <form method="POST" id="form-Linea púrpura" class="form-boton">
                     {% csrf_token %}
-                    <!-- Campo oculto para enviar el nombre del botón -->
-                    <input type="hidden" name="boton" value="{{ boton.nombre }}">
-                    <button class="button" type="button" onclick="redirigirWhatsApp('{{ boton.numero }}', event)">
-                        <span class="button2">{{ boton.nombre }}</span>
+                    <input type="hidden" name="boton" value="Linea púrpura">
+                    <button class="button" type="button" onclick="redirigirWhatsApp('3026032386', event)">
+                        <span class="button2">Linea púrpura</span>
                     </button>
                 </form>
             </div>
             <div class="description">
-                {% if boton.nombre == "Linea púrpura" %}
                 (Línea de acompañamiento psicosocial y jurídico)
-                {% elif boton.nombre == "Patrulla púrpura" %}
-                (Cuadrante de la Policía Nacional especializado en violencia basada en género.)
-                {% elif boton.nombre == "Taxi púrpura" %}
-                (Siéntete segura viajando en nuestros taxis<br>intermunicipales, especializados en transportar mujeres.)
-                {% else %}
-                {{ boton.descripcion }}
-                {% endif %}
             </div>
         </div>
-        {% endfor %}
+
+        <div class="button-group">
+            <div class="icon-button-container">
+                <div class="icon-container">
+                    <img src="{% static 'img/sirena.png' %}" alt="Patrulla púrpura" class="icon" />
+                </div>
+                <form method="POST" id="form-Patrulla púrpura" class="form-boton">
+                    {% csrf_token %}
+                    <input type="hidden" name="boton" value="Patrulla púrpura">
+                    <button class="button" type="button" onclick="redirigirWhatsApp('3156861972', event)">
+                        <span class="button2">Patrulla púrpura</span>
+                    </button>
+                </form>
+            </div>
+            <div class="description">
+                (Cuadrante de la Policía Nacional especializado en violencia basada en género.)
+            </div>
+        </div>
+
+        <div class="button-group">
+            <div class="icon-button-container">
+                <div class="icon-container">
+                    <img src="{% static 'img/taxi.png' %}" alt="Taxi púrpura" class="icon" />
+                </div>
+                <button class="button" type="button" onclick="abrirModal('Taxi púrpura')">
+                    <span class="button2">Taxi púrpura</span>
+                </button>
+            </div>
+            <div class="description">
+                (Siéntete segura viajando en nuestros taxis<br>intermunicipales, especializados en transportar mujeres.)
+            </div>
+        </div>
     </div>
 
+    <!-- Modal -->
+    <div id="modal-taxi" class="modal-overlay" style="display: none;">
+        <div class="modal-taxi">
+            <form method="POST" id="form-Linea púrpura" class="form-boton">
+                {% csrf_token %}
+                <h2>Selecciona una opción</h2>
+                <input type="hidden" name="boton" value="Taxi púrpura">
+                <button class="button" type="button" onclick="redirigirWhatsApp('3026032386', event)">Opción 1</button>
+                <button class="button" type="button" onclick="redirigirWhatsApp('3026032386', event)">Opción 2</button>
+                <button class="button" type="button" onclick="redirigirWhatsApp('3026032386', event)">Opción 3</button>
+                <button class="button" type="button" onclick="redirigirWhatsApp('3026032386', event)">Opción 4</button>
+                <button class="button" type="button" onclick="redirigirWhatsApp('3026032386', event)">Opción 5</button>
+            </form>
+            <button class="close-modal" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+    
+
     <script>
-        // Función que envía el formulario utilizando AJAX y luego redirige a WhatsApp
+        function abrirModal(nombreBoton) {
+            const modal = document.getElementById('modal-taxi');
+            modal.style.display = 'block';
+            modal.setAttribute('data-nombre-boton', nombreBoton);
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal-taxi');
+            modal.style.display = 'none';
+            modal.removeAttribute('data-nombre-boton');
+        }
+
+    
         function redirigirWhatsApp(numero, event) {
             event.preventDefault(); // Prevenir el comportamiento predeterminado del botón (enviar el formulario)
 
