@@ -127,7 +127,7 @@ body::before {
 
 /* Estilos del overlay para el modal */
 .modal-overlay {
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -140,37 +140,37 @@ body::before {
 }
 
 /* Estilos del modal */
+/* Estilos del overlay para el modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Asegura que el overlay cubra toda la altura de la pantalla */
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex; /* Flexbox para centrar el contenido */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    z-index: 1000; /* Se asegura de que el overlay esté por encima de otros contenidos */
+}
+
+/* Estilos del modal */
 .modal-taxi {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    max-width: 90%;
+    max-width: 90%; /* Asegura que el modal no se desborde */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    margin: auto; 
+    margin-top: 100px;/* Centrado dentro del contenedor */
 }
 
-/* Estilos de los botones dentro del modal */
-.modal-taxi button {
-    background-color: #7e57c2;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 250px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    margin: 5px;
-}
 
 /* Efecto hover en los botones del modal */
 .modal-taxi button:hover {
@@ -179,9 +179,9 @@ body::before {
 
 /* Estilo del botón de cerrar */
 .modal-taxi .close-modal {
-    background-color: #ff5c5c;
-    color: #fff;
-    border: none;
+    background-color: #cf2222;
+    color: #ffffff;
+    border: 3px solid;
     border-radius: 20px;
     padding: 10px 20px;
     font-size: 1rem;
@@ -193,6 +193,12 @@ body::before {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: 5px;
+    margin: 3px;
 }
+
+.modal-taxi .close-modal:hover{
+
+    background-color: #bd3b3b ;
+}
+    
 
