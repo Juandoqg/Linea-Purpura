@@ -168,7 +168,7 @@ body::before {
     align-items: center;
     position: relative;
     margin: auto; 
-    margin-top: 190px;/* Centrado dentro del contenedor */
+    margin-top: 10%;/* Centrado dentro del contenedor */
 }
 
 
