@@ -160,17 +160,32 @@ body::before {
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    max-width: 90%; /* Asegura que el modal no se desborde */
+    max-width: 90%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin: auto; 
-    margin-top: 10%;/* Centrado dentro del contenedor */
+    margin: auto;
+    top: 6%;
+    transform: translateY(20%);
 }
 
+/* Responsivo */
+@media (max-width: 768px) {
+    .modal-taxi {
+        width: 40%;
+        top: 15%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-taxi {
+        width: 75%;
+        top: 8%;
+    }
+}
 
 /* Efecto hover en los botones del modal */
 .modal-taxi button:hover {
