@@ -3,9 +3,19 @@ function abrirModal(nombreBoton) {
     modal.style.display = 'block';
     modal.setAttribute('data-nombre-boton', nombreBoton);
 }
+function abrirModalPatrulla(nombreBoton) {
+    const modal = document.getElementById('modal-patrulla');
+    modal.style.display = 'block';
+    modal.setAttribute('data-nombre-boton', nombreBoton);
+}
 
 function cerrarModal() {
     const modal = document.getElementById('modal-taxi');
+    modal.style.display = 'none';
+    modal.removeAttribute('data-nombre-boton');
+}
+function cerrarModalPatrulla() {
+    const modal = document.getElementById('modal-patrulla');
     modal.style.display = 'none';
     modal.removeAttribute('data-nombre-boton');
 }

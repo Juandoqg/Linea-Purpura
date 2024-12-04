@@ -171,6 +171,22 @@ body::before {
     top: 6%;
     transform: translateY(20%);
 }
+.modal-patrulla {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    top: 6%;
+    transform: translateY(20%);
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -214,5 +230,51 @@ body::before {
 
     background-color: #bd3b3b ;
 }
+
+
+
+@media (max-width: 768px) {
+    .modal-patrulla {
+        width: 40%;
+        top: 15%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-patrulla {
+        width: 75%;
+        top: 8%;
+    }
+}
+
+/* Efecto hover en los botones del modal */
+.modal-patrulla button:hover {
+    background-color: #5e3ea0;
+}
+
+.modal-patrulla .close-modal {
+    background-color: #cf2222;
+    color: #ffffff;
+    border: 3px solid;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 250px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 3px;
+}
+
+.modal-patrulla .close-modal:hover{
+
+    background-color: #bd3b3b ;
+}
+    
+
     
 
